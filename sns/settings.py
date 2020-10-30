@@ -11,11 +11,9 @@ SECRET_KEY = 'dq_s@_7zbz4k4ws=_(&_asg#*!_gsyrl%(lr!ky8rsh$&1n6ew'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['0.0.0.0']
 
 # Application definition
-
 DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,16 +23,18 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 ]
-PROJECT_APPS = [
-    'accounts',
-]
 
+PROJECT_APPS = [
+
+]
 
 COMMON_APPS = [
     # allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    # provider
     'allauth.socialaccount.providers.kakao',
 ]
 
@@ -71,8 +71,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sns.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,8 +79,6 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -107,7 +103,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-
 
 SITE_ID = 1
 

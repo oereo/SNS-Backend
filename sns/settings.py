@@ -53,7 +53,7 @@ ROOT_URLCONF = 'sns.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'sns/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,3 +114,6 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# static
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

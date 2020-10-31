@@ -117,3 +117,13 @@ AUTHENTICATION_BACKENDS = [
 # static
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+SOCIALACCOUNT_PROVIDERS = {
+    'kakao': {
+        'APP': {
+            'client_id': 'd01f306c90eda69601dda10cdf62631e',
+            'secret': '492230',
+            'key': '',
+        }
+    }
+}

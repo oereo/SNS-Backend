@@ -9,7 +9,7 @@ SECRET_KEY = 'dq_s@_7zbz4k4ws=_(&_asg#*!_gsyrl%(lr!ky8rsh$&1n6ew'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
 
 # Application definition
 DEFAULT_APPS = [
@@ -23,7 +23,7 @@ DEFAULT_APPS = [
 ]
 
 PROJECT_APPS = [
-
+    'accounts',
 ]
 
 COMMON_APPS = [
@@ -93,7 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = 'ko'
+LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 USE_L10N = True
@@ -104,6 +104,8 @@ STATIC_URL = '/static/'
 
 SITE_ID = 1
 
+AUTH_USER_MODEL = 'accounts.User'
+
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -111,3 +113,4 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+

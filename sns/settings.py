@@ -9,7 +9,7 @@ SECRET_KEY = 'dq_s@_7zbz4k4ws=_(&_asg#*!_gsyrl%(lr!ky8rsh$&1n6ew'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 # Application definition
 DEFAULT_APPS = [
@@ -32,9 +32,20 @@ COMMON_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    'sass_processor',
+
     # provider
     'allauth.socialaccount.providers.kakao',
 ]
+
+SASS_PROCESSOR_ENABLED = True
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
+SASS_PRECISION = 8
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+)
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS + COMMON_APPS
 

@@ -24,6 +24,7 @@ DEFAULT_APPS = [
 
 PROJECT_APPS = [
     'accounts',
+    'blog',
 ]
 
 COMMON_APPS = [

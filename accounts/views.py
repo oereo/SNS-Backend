@@ -53,5 +53,5 @@ def profile_register(request):
 
     # 정보를 토대로 프로필 생성
     Profile.objects.get_or_create(user=user, nick=nickname)
-
+    # return redirect("main/")
     return render(request, "profile.html", {'access_token': access_token})

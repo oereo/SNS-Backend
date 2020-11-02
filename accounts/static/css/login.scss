@@ -21,12 +21,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   * {
     position: absolute;
     will-change: transform;
   }
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -39,7 +39,7 @@
     animation: shadow
       calc(1 * var(--semi-duration))
       infinite;
-    
+
     @keyframes shadow {
       from, to {
         transform: scaleX(.75)
@@ -59,12 +59,12 @@
   transform-origin: center bottom;
   transform: rotate(15deg);
   z-index: 2;
-  
+
   > .fur {
     border-bottom-left-radius: 10px;
     height: 100%;
     width: 100%;
-    
+
     &:before {
       content: '';
       position: absolute;
@@ -89,7 +89,7 @@
   border-radius: 5px;
   animation: collar var(--semi-duration) calc(var(--semi-duration) / 4) infinite;
   z-index: 2;
-  
+
   @keyframes collar {
     from, to {
       transform: none;
@@ -98,7 +98,7 @@
       transform: translateY(-25%);
     }
   }
-  
+
   &:after {
     content: '';
     width: 18%;
@@ -110,7 +110,7 @@
     top: 110%;
     transform-origin: center top;
     animation: tag var(--semi-duration) infinite both;
-    
+
     @keyframes tag {
       from, to {
         transform: rotate(-15deg);
@@ -130,7 +130,7 @@
   transform-origin: left center;
   z-index: 2;
   animation: head var(--semi-duration) calc(var(--semi-duration) / 4) infinite;
-  
+
   @keyframes head {
     from, to {
       transform: rotate(-10deg);
@@ -139,12 +139,12 @@
       transform: rotate(-15deg);
     }
   }
-  
+
   > .fur {
     height: 100%;
     width: 100%;
     border-bottom-right-radius: 80px;
-    
+
     &:before {
       content: '';
       position: absolute;
@@ -189,13 +189,13 @@
   transform-origin: left bottom;
   transform: rotate(-10deg);
   animation: ear-front calc(var(--duration) / 2) infinite;
-  
+
   @keyframes ear-front {
     50% {
       transform: rotate(-15deg);
     }
   }
-  
+
     &:before {
       content: '';
       position: absolute;
@@ -211,7 +211,7 @@
       border-left: 2px solid var(--color-snout);
       transform-origin: bottom left;
       animation: ear-mark var(--semi-duration) calc(-1 * var(--semi-duration)) infinite;
-      
+
       @keyframes ear-mark {
         from, to {
           transform: rotate(0deg);
@@ -221,13 +221,13 @@
         }
       }
     }
-  
+
   > .fur {
     border-top-left-radius: 100%;
     height: 100%;
     width: 100%;
   }
-  
+
   &:nth-child(2) {
     left: 15px;
     bottom: 5px;
@@ -235,7 +235,7 @@
     --color: var(--color-fur);
     z-index: -1;
     animation: ear-back calc(var(--duration) / 2) infinite both;
-    
+
     @keyframes ear-back {
       from, to {
         transform: rotate(0deg);
@@ -258,7 +258,7 @@
   border-radius: 50%;
   background-color: var(--color);
   z-index: 1;
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -270,7 +270,7 @@
     background-color: var(--color);
     z-index: 1;
   }
-  
+
   &:after {
     content: '';
     width: 100%;
@@ -293,7 +293,7 @@
   width: percentage(170px / 300px);
   height: percentage(100px / 300px);
   animation: torso var(--semi-duration) both infinite;
-  
+
   @keyframes torso {
     from, to {
       transform: none;
@@ -302,7 +302,7 @@
       transform: translateY(15%);
     }
   }
-  
+
   > .fur {
     height: 100%;
     width: 185px;
@@ -310,7 +310,7 @@
     transform-origin: left center;
     transform: rotate(-20deg) translateY(10px);
     z-index: 1;
-    
+
     &:after {
       height: 100%;
       width: 100%;
@@ -318,7 +318,7 @@
       border-bottom-right-radius: 100px;
     }
   }
-  
+
   > .legs {
     position: absolute;
     top: 0;
@@ -326,7 +326,7 @@
     width: 100%;
     height: 100%;
   }
-  
+
   .spot {
     width: 120px;
     height: 120px;
@@ -336,7 +336,7 @@
     background-color: var(--color-spot);
     z-index: 1;
     animation: spot var(--duration) calc(-1 * var(--semi-duration)) both infinite;
-    
+
     @keyframes spot {
       from, 66%, to {
         transform: none;
@@ -345,7 +345,7 @@
         transform: translateX(10px);
       }
     }
-    
+
     &:after {
       content: '';
       height: 20px;
@@ -357,7 +357,7 @@
       right: 5px;
     }
   }
-  
+
   > .tail {
     --color: var(--color-spot);
     bottom: calc(100% - 15px);
@@ -374,7 +374,7 @@
   border-top-right-radius: 10px 100%;
   border-top-left-radius: 10px 100%;
   animation: tail var(--semi-duration) infinite;
-  
+
   @keyframes tail {
     from, to {
       transform: rotate(-45deg) translateX(-15%);
@@ -383,13 +383,13 @@
       transform: rotate(-25deg) translateX(15%);
     }
   }
-  
+
   > .tail {
     bottom: calc(90%);
     transform-origin: bottom left;
     transform: rotate(-10deg) translateY(50%) scaleX(.8) scaleY(.9);
     animation: tail-inner var(--semi-duration) var(--stagger) infinite;
-    
+
     @keyframes tail-inner {
       from, to {
         transform: rotate(-10deg) translateY(50%) scaleX(.8) scaleY(.9);
@@ -406,29 +406,29 @@
     bottom: 5px;
     --color: var(--color-fur);
   }
-  
+
   > .leg:nth-child(1), .leg:nth-child(3) {
     // top: calc(100% - 65px);
     right: 15px;
   }
-  
+
   > .leg:nth-child(3), > .leg:nth-child(4) {
     --color: var(--color-fur-dark);
     z-index: -1;
   }
-  
+
   > .leg:nth-child(1), .leg:nth-child(4) {
     --delay: 0s;
   }
-  
+
   > .leg:nth-child(2), > .leg:nth-child(3) {
     --delay: calc(-1 * var(--duration) / 2 )
   }
-  
+
   > .leg:nth-child(2) {
     left: 0;
   }
-  
+
   > .leg:nth-child(4) {
     left: 0;
   }
@@ -444,13 +444,13 @@
   // transform: rotate(-10deg);
   // border-bottom-right-radius: 10px;
   animation: leg infinite var(--duration) var(--delay, 0s);
-  
+
   > .leg-inner {
     animation: leg-inner infinite
       var(--duration)
       calc(var(--delay));
     transform: rotate(90deg);
-    
+
     @keyframes leg-inner {
       from, to {
         transform: none;
@@ -463,7 +463,7 @@
       }
     }
   }
-  
+
   @keyframes leg {
     from, to {
       transform: none;

@@ -130,6 +130,11 @@ AUTHENTICATION_BACKENDS = [
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# media
+MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent, "uploads")
+MEDIA_URL = '/media/'
+
+
 SOCIALACCOUNT_PROVIDERS = {
     'kakao': {
         'APP': {

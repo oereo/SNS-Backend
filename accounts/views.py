@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 import requests
 from .models import User, Profile
 from allauth.socialaccount.models import SocialAccount
+from django.contrib import auth
+
 
 
 def login(request):
@@ -50,8 +52,9 @@ def profile_register(request):
     SocialAccount.objects.get_or_create(
         user=user, provider="kakao", uid=kakao_id
     )
-
-    # 정보를 토대로 프로필 생성
+    user.save()
+    user = auth.authenticate(request, email=email, password= access_token)
+    auth.login(request, user)    # 정보를 토대로 프로필 생성
     Profile.objects.get_or_create(user=user, nick=nickname)
     # return redirect("main/")
     return render(request, "profile.html", {'access_token': access_token})

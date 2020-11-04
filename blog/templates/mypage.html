@@ -1,7 +1,7 @@
 {% load static %}
 <html>
 <head>
-    <title>Generic - Phantom by HTML5 UP</title>
+    <title>Dogs Friend</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
@@ -37,7 +37,7 @@
         <h2>Menu</h2>
         <ul>
             <li><a href="{% url 'main' %}">홈으로 가기</a></li>
-            <li><a href="{% url 'generic' %}">마이페이지</a></li>
+            <li><a href="{% url 'mypage' %}">마이페이지</a></li>
             <li><a href="{% url 'generic' %}">멍뭉이 자랑하러가기</a></li>
         </ul>
     </nav>
@@ -45,25 +45,24 @@
     <!-- Main -->
     <div id="main">
         <div class="inner">
-            <h1>제목이 들어갈 부분</h1>
-            <span class="image main"><img src="{% static 'images/강아지.jpg' %}" alt=""/></span>
-            <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis
-                dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet.
-                Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia
-                malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien
-                risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit
-                tristique.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent
-                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu
-                nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies
-                condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem
-                mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et
-                netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque
-                aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet
-                dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo
-                mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis
-                elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+            <header>
+                <h1>{{request.user}}<br/>
+                </h1>
+                <p>강아지들의 일상과 사랑스런 모습들을 같이 공유해보아요!! 자랑하고 싶은 모습들이나 하나의 해프닝 모두다 괜찮습니다!</p>
+            </header>
+            <section class="tiles">
+                <article class="style1">
+									<span class="image">
+										<img src="{% static 'images/강아지.jpg' %}" alt=""/>
+									</span>
+                    <a href="{% url 'generic' %}">
+                        <h2>멍무이</h2>
+                        <div class="content">
+                            <p>우리 멍무이가 꼬까옷을 입었어요!</p>
+                        </div>
+                    </a>
+                </article>
+            </section>
         </div>
     </div>
 

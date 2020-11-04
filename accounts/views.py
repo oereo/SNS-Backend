@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
 import requests
-from .models import User, Profile
 from allauth.socialaccount.models import SocialAccount
 from django.contrib import auth
+from django.shortcuts import render
 
+from .models import User, Profile
 
 
 def login(request):
@@ -46,15 +46,19 @@ def profile_register(request):
     profile = kakao_account.get("profile")
     nickname = profile.get("nickname")
     profile_image = profile.get("thumbnail_image_url")
-
+    # data = {'access_token': access_token}
+    # accept = requests.post(
+    #         f"http://127.0.0.1:8100/account/login/kakao/todjango", data=data
+    #     )
     # 정보를 토대로 유저 생성
     user, _ = User.objects.get_or_create(email=email)
     SocialAccount.objects.get_or_create(
         user=user, provider="kakao", uid=kakao_id
     )
     user.save()
-    user = auth.authenticate(request, email=email, password= access_token)
     auth.login(request, user)    # 정보를 토대로 프로필 생성
     Profile.objects.get_or_create(user=user, nick=nickname)
     # return redirect("main/")
-    return render(request, "profile.html", {'access_token': access_token})
+    return render(request, "profile.html")
+
+

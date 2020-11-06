@@ -59,7 +59,7 @@ def profile_register(request):
     return render(request, "profile.html")
 
 
-def profile(request):
-    user = request.user
-
-    return redirect('main')
+# def profile(request):
+#     user = request.user
+#
+#     return render(request, "profile.html")

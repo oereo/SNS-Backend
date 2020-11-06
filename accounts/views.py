@@ -1,7 +1,7 @@
 import requests
 from allauth.socialaccount.models import SocialAccount
 from django.contrib import auth
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import User, Profile
 
@@ -59,3 +59,7 @@ def profile_register(request):
     return render(request, "profile.html")
 
 
+def profile(request):
+    user = request.user
+
+    return redirect('main')

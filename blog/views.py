@@ -4,7 +4,6 @@ from .models import Blog
 from django.utils import timezone
 
 
-
 def main(request):
     return render(request, "index.html")
 
@@ -28,10 +27,11 @@ def create(request):
     user = request.user
     blog = Blog()
     blog.user_id = user.id
-    blog.owner = user.username
-    blog.title = request.GET['title']
-    blog.body = request.GET['body']
+    blog.owner = user.email
+    blog.title = request.POST['title']
+    blog.body = request.POST['body']
     blog.pub_date = timezone.datetime.now()
+    blog.image = request.POST['image']
     blog.save()
     # return redirect('/blog/'+str(blog.id))
     return redirect('main')

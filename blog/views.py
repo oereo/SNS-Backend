@@ -33,5 +33,4 @@ def create(request):
     blog.pub_date = timezone.datetime.now()
     blog.image = request.POST['image']
     blog.save()
-    # return redirect('/blog/'+str(blog.id))
     return redirect('main')

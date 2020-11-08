@@ -23,6 +23,10 @@ def postpage(request):
     return render(request, 'postpage.html')
 
 
+def mappage(request):
+    return render(request, 'map.html')
+
+
 def create(request):
     user = request.user
     blog = Blog()

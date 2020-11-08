@@ -6,5 +6,6 @@ urlpatterns = [
     path('generic/', generic, name="generic"),
     path('mypage/', mypage, name="mypage"),
     path('postpage', postpage, name="postpage"),
-    path('create/', create, name="create")
+    path('create/', create, name="create"),
+    path('map/', mappage, name="map")
 ]

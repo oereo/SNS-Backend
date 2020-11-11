@@ -53,7 +53,7 @@ def profile_register(request):
         user=user, provider="kakao", uid=kakao_id
     )
     user.save()
-    auth.login(request, user)    # 정보를 토대로 프로필 생성
+    auth.login(request, user, backend="django.contrib.auth.backends.ModelBackend")    # 정보를 토대로 프로필 생성
     Profile.objects.get_or_create(user=user, nick=nickname)
 
     return render(request, "profile.html")

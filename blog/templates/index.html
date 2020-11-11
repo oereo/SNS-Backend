@@ -52,19 +52,22 @@
                 </h1>
                 <p>강아지들의 일상과 사랑스런 모습들을 같이 공유해보아요!! 자랑하고 싶은 모습들이나 하나의 해프닝 모두다 괜찮습니다!</p>
             </header>
+            {% for blog in blogs %}
             <section class="tiles">
                 <article class="style1">
 									<span class="image">
 										<img src="{% static 'images/강아지.jpg' %}" alt=""/>
 									</span>
-                    <a href="{% url 'postpage' %}">
-                        <h2>멍무이</h2>
+                    <a href="{% url 'postpage' blog.id %}">
+                        <h2>{{blog.title}}</h2>
+                        <h4>{{blog.pub_date}}</h4>
                         <div class="content">
-                            <p>우리 멍무이가 꼬까옷을 입었어요!</p>
+                            <p>{{blog.body}}</p>
                         </div>
                     </a>
                 </article>
             </section>
+            {% endfor %}
         </div>
     </div>
 

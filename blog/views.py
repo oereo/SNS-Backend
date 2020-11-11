@@ -1,11 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from accounts.models import Profile
 from .models import Blog
 from django.utils import timezone
 
 
 def main(request):
-    return render(request, "index.html")
+    user = request.user
+    blogs = Blog.objects.all()
+    return render(request, "index.html", {'blogs': blogs})
 
 
 def generic(request):
@@ -19,8 +21,10 @@ def mypage(request):
     return render(request, 'mypage.html')
 
 
-def postpage(request):
-    return render(request, 'postpage.html')
+def postpage(request, blog_id):
+    blog_detail = get_object_or_404(Blog, pk=blog_id)
+    blog_detail.increaseViews()
+    return render(request, 'postpage.html', {'blog_detail': blog_detail})
 
 
 def mappage(request):

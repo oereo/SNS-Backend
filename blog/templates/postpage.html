@@ -48,19 +48,15 @@
             <!--            <h1>멍뭉이 자랑을 해요!</h1>-->
             <div class="row">
                 <div class="column-4">
-                    <img src="{% static 'images/강아지.jpg' %}" alt=""/>
+                    <img src="{{blog_detail.image.url }}" alt=""/>
                 </div>
                 <div class="column-8">
                     <h1>멍무이</h1>
                     <div class="content">
-                        <h2>우리 멍무이가 꼬까옷을 입었어요!</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br>
-                            when an unknown printer took a galley of type and scrambled it <br>
-                            to make a type specimen book.<br>
-                            It has survived not only five centuries, <br>
-                            but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <h2>{{blog_detail.title}}</h2>
+                        <p>내용 : {{blog_detail.body}}
                         </p>
+                        <p>조회수 : {{blog_detail.views}}</p>
                     </div>
                 </div>
             </div>

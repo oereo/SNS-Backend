@@ -4,8 +4,8 @@ from django.conf import settings
 
 class Blog(models.Model):
     user_id = models.IntegerField()
-    owner = models.CharField(max_length=20, default="???")
-    image = models.ImageField(upload_to="blog/%Y/%m/%d")  # 어디에 업로드할지 지정할 수 있음.
+    owner = models.CharField(max_length=30, default="???")
+    image = models.ImageField(upload_to="sns/%Y/%m/%d")  # 어디에 업로드할지 지정할 수 있음.
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date_published')
     body = models.TextField()
